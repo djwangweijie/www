@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ijuncao.www.mapper.DeviceMapper">
+
+
+
+	<insert id="insertDeviceInfo" parameterType="java.util.List">
+		insert into w_device
+		(sn,alias,type,series,code,city,district,lat,lng,province)
+		values
+		<foreach collection="list" item="item" index="index"
+			separator=",">
+			(
+			#{item.sn},
+			#{item.alias},
+			#{item.type},
+			#{item.series},
+			#{item.code},
+			#{item.city},
+			#{item.district},
+			#{item.lat},
+			#{item.lng},
+			#{item.province}
+			)
+		</foreach>
+	</insert>
+
+	<select id="selectSnbyUid" resultType="java.lang.String">
+		select sn from user_device
+		where userid =#{uid}
+	</select>
+
+	<select id="selectDeviceInfo" parameterType="java.util.List"
+		resultType="Device">
+		select sn,alias,type,series,code,city,district,lat,lng,province
+		from w_device
+		<where>
+			<if test="list != null and list.size > 0">
+				sn not in
+				<foreach collection="list" item="item" open="("
+					separator="," close=")">
+					#{item}
+				</foreach>
+			</if>
+		</where>
+	</select>
+
+</mapper>

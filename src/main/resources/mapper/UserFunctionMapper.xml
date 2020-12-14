@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ijuncao.www.mapper.UserFunctionMapper">
+ 
+<resultMap id="BaseFucntiontMap" type="Function">
+    <id property="id" column="fid"/>
+    <result column="fname" property="title"/>
+    <result column="pid" property="pid"/>
+    <result column="icon" property="icon"/>
+    <result column="href" property="href"/>
+    <result column="target" property="target"/>
+    <result column="userid" property="userid"/>
+    <collection property="child" ofType="Function" select="selectFuctionByUid"  column="{pid=fid,uid=userid}"></collection>
+</resultMap>
+
+<resultMap id="FunctionInfoMap" type="FunctionVo">
+ 	<id     column="fid"    property="authorityId" />
+ 	<result column="fname"  property="authorityName"/>
+    <result column="pid"    property="parentId"/>
+    <result column="ismenu" property="isMenu"/>
+</resultMap>
+ 
+<select id="selectFuctionByUid" resultMap="BaseFucntiontMap">
+    SELECT  userid, fid,fname,pid,icon,ifnull(href,"") as href,target
+	FROM  w_func
+	INNER JOIN user_func
+	ON  w_func.fid = user_func.func
+	WHERE  w_func.pid = #{pid} AND  user_func.ishava=1 AND user_func.userid=#{uid}
+</select>
+
+
+<select id="selectAllFunctionOfId" resultType="java.lang.Integer">
+	SELECT fid
+	FROM w_func
+</select>
+
+<select id="selectAllFunction"  resultMap="FunctionInfoMap">
+	SELECT fid,fname,pid,ismenu FROM w_func
+</select>
+
+<insert id="insertFunctionWithUid"  parameterType="java.util.List">
+        insert into user_func(userid,func,ishava)
+        values
+     <foreach collection="fids" item="item" index="index"  separator=",">
+        (#{uid},#{item},0)
+    </foreach>      
+</insert>
+
+
+<update id="updateUserFunction"  parameterType="java.util.List">
+    <foreach collection="fids" item="item" index="index" open="" close="" separator=";">
+        update user_func
+        <set>
+            ishava = 1
+        </set>
+        where userid = ${uid}  and func = ${item}
+    </foreach>
+
+</update>
+
+ 
+</mapper>

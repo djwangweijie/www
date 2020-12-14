@@ -1,0 +1,175 @@
+{
+  "code": 0,
+  "msg": "",
+  "count": 19,
+  "data": [
+    {
+      "authorityId": 2,
+      "authorityName": "用户管理",
+      "isMenu": 0,
+      "parentId": 1,
+      "open": true
+    },
+    {
+      "authorityId": 1,
+      "authorityName": "系统管理",
+      "isMenu": 0,
+      "parentId": -1,
+      "open": true
+    },
+    {
+      "authorityId": 3,
+      "authorityName": "查询用户",
+      "isMenu": 1,
+      "parentId": 2,
+      "open": true
+    },
+    {
+      "authorityId": 4,
+      "authorityName": "添加用户",
+      "isMenu": 1,
+      "parentId": 2,
+      "open": true
+    },
+    {
+      "authorityId": 5,
+      "authorityName": "修改用户",
+      "isMenu": 1,
+      "parentId": 2,
+      "open": true
+    },
+    {
+      "authorityId": 6,
+      "authorityName": "删除用户",
+      "isMenu": 1,
+      "parentId": 2,
+      "open": true
+    },
+    {
+      "authorityId": 7,
+      "authorityName": "角色管理",
+      "isMenu": 0,
+      "parentId": 1,
+      "open": true
+    },
+    {
+      "authorityId": 8,
+      "authorityName": "查询角色",
+      "isMenu": 1,
+      "parentId": 7,
+      "open": true
+    },
+    {
+      "authorityId": 9,
+      "authorityName": "添加角色",
+      "isMenu": 1,
+      "parentId": 7,
+      "open": true
+    },
+    {
+      "authorityId": 10,
+      "authorityName": "修改角色",
+      "isMenu": 1,
+      "parentId": 7,
+      "open": true
+    },
+    {
+      "authorityId": 11,
+      "authorityName": "删除角色",
+      "isMenu": 1,
+      "parentId": 7,
+      "open": true
+    },
+    {
+      "authorityId": 12,
+      "authorityName": "角色权限管理",
+      "isMenu": 1,
+      "parentId": 7,
+      "open": true
+    },
+    {
+      "authorityId": 13,
+      "authorityName": "权限管理",
+      "isMenu": 0,
+      "parentId": 1,
+      "open": true
+    },
+    {
+      "authorityId": 14,
+      "authorityName": "查询权限",
+      "isMenu": 1,
+      "parentId": 13,
+      "open": true
+    },
+    {
+      "authorityId": 15,
+      "authorityName": "添加权限",
+      "isMenu": 1,
+      "parentId": 13,
+      "open": true
+    },
+    {
+      "authorityId": 16,
+      "authorityName": "修改权限",
+      "isMenu": 1,
+      "parentId": 13,
+      "open": true
+    },
+    {
+      "authorityId": 17,
+      "authorityName": "删除权限",
+      "isMenu": 1,
+      "parentId": 13,
+      "open": true
+    },
+    {
+      "authorityId": 18,
+      "authorityName": "登录日志",
+      "isMenu": 0,
+      "parentId": 1,
+      "open": true
+    },
+    {
+      "authorityId": 19,
+      "authorityName": "查询登录日志",
+      "isMenu": 1,
+      "parentId": 18,
+      "open": true
+    },
+    {
+      "authorityId": 20,
+      "authorityName": "机构管理",
+      "isMenu": 1,
+      "parentId": 1,
+      "open": true
+    },
+    {
+      "authorityId": 21,
+      "authorityName": "查询机构",
+      "isMenu": 0,
+      "parentId": 20,
+      "open": true
+    },
+    {
+      "authorityId": 22,
+      "authorityName": "添加机构",
+      "isMenu": 0,
+      "parentId": 20,
+      "open": true
+    },
+    {
+      "authorityId": 23,
+      "authorityName": "修改机构",
+      "isMenu": 0,
+      "parentId": 20,
+      "open": true
+    },
+    {
+      "authorityId": 24,
+      "authorityName": "删除机构",
+      "isMenu": 0,
+      "parentId": 20,
+      "open": true
+    }
+  ]
+}

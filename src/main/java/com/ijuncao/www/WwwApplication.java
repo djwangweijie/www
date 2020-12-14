@@ -5,7 +5,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import cn.hutool.cron.CronUtil;
-
+/*
+ * 这个是springboot启动文件
+ */
 @SpringBootApplication
 @EnableTransactionManagement
 @MapperScan("com.ijuncao.www.mapper")
